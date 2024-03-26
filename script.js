@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const board = document.getElementById('board');
     const restartBtn = document.getElementById('restart-btn');
+    const resultText = document.getElementById('result-text');
 
     let currentPlayer = 'X';
     let cells = [];
@@ -21,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
             cells[index] = currentPlayer;
             render();
             if (checkWinner()) {
-                alert(`Player ${currentPlayer} wins!`);
+                resultText.textContent = `Player ${currentPlayer} wins!`;
             } else if (cells.every(cell => cell !== '')) {
-                alert("It's a draw!");
+                resultText.textContent = "It's a draw!";
             } else {
                 currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
             }
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function restartGame() {
         cells = [];
         currentPlayer = 'X';
+        resultText.textContent = 'Tic Tac Toe';
         board.innerHTML = '';
         createBoard();
     }
