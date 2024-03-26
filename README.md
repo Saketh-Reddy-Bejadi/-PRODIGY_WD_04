@@ -1,4 +1,4 @@
-# PRODIGY_WD_04
+# PRODIGY_WD_03
 # Tic Tac Toe Game
 
 This is a simple implementation of the classic Tic Tac Toe game developed using HTML, CSS, JavaScript.
